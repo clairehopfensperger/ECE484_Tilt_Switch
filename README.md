@@ -1,1 +1,1 @@
-# ECE484_Tilt_Switch
+# Tilt_Switch
