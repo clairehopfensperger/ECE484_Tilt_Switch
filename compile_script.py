@@ -21,9 +21,9 @@ def run_command(command):
 print ("Number of arguments: %d" %  len(sys.argv))
 print ("Argument List: %s" % str(sys.argv))
 
-files_to_compile = ['level', 'libTiltSwitch/tilt_switch']
+files_to_compile = ['tilt_level', 'libTiltSwitch/tilt_switch']
 directories = ['libTiltSwitch']
-file_to_compile = 'level'
+file_to_compile = 'tilt_level'
 if len(sys.argv) == 2:
     com_port = 'com4'
 else:

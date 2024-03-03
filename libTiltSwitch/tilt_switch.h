@@ -10,6 +10,7 @@
 #endif
 #include <avr/io.h>
 #include <util/delay.h>
+#include "IO_Macros.h"
 
 // Prototypes
 int checkState(int tiltSwitchPin);
