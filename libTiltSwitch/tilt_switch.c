@@ -21,7 +21,7 @@
 */
 int checkState(int tiltSwitchPin)
 {
-    return digitalRead(tiltSwitchPin);
+    return (PIND & (1 << tiltSwitchPin));
 }
 
 /**
@@ -66,7 +66,7 @@ int debouncedCheckState(int tiltSwitchPin)
 void waitForTiltON(int tiltSwitchPin)
 {
     // Do nothing while tilt switch is in OFF state.
-    while (checkState(tiltSwitchPin) == 0)
+    while (checkState(tiltSwitchPin) == 1)
     {}
 }
 
@@ -78,7 +78,7 @@ void waitForTiltON(int tiltSwitchPin)
 void waitForTiltOFF(int tiltSwitchPin)
 {
     // Do nothing while tilt switch is in OFF state.
-    while (checkState(tiltSwitchPin) == 1)
+    while (checkState(tiltSwitchPin) == 0)
     {}
 }
 

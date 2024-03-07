@@ -27,16 +27,17 @@ int main(void)
 
     while(1)
     {
-        // Turning output pin on
-        PORTB |= _BV(PORTB0);
-
-        _delay_ms(100);
-
-        // Turning output pin off
-        PORTB &= ~_BV(PORTB0);
-
+        if (!checkState(TILT1) && !checkState(TILT2) && !checkState(TILT3) && !checkState(TILT4))
+        {
+            // Turning output pin on
+            PORTB |= _BV(PORTB0);
+        } else
+        {
+            // Turning output pin off
+            PORTB &= ~_BV(PORTB0);
+        }
+        
         _delay_ms(100);
     }
-
 
 }
