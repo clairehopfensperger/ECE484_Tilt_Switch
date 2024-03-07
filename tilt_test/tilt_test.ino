@@ -11,6 +11,10 @@ const int tilt4 = 5;
 // LED
 const int led = 8;
 
+//----------------------------------------
+// Setup
+//----------------------------------------
+
 void setup() {
   // Set all tilt switches as digital inputs.
   pinMode(tilt1, INPUT);
@@ -24,6 +28,10 @@ void setup() {
   // Initialize serial monitor.
   Serial.begin(9600);
 }
+
+//----------------------------------------
+// Main loop
+//----------------------------------------
 
 void loop() {
   // Get state of tilt switches; 0 = not tilted/is connected,
