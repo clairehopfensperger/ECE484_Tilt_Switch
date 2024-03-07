@@ -13,21 +13,24 @@
 #include "libTiltSwitch/tilt_switch.h"
 
 // Defining tilt switch pins
-#define TILT1 PD7
-#define TILT2 PD6
-#define TILT3 PD5
-#define TILT4 PD4
+// #define TILT1 PD2
+// #define TILT2 PD3
+// #define TILT3 PD4
+// #define TILT4 PD5
 
 int main(void)
 {
+    // Putt tilt switch pins in an array.
+    const int numTiltSwitches = 4;
+    const int tiltSwitches[numTiltSwitches] = {PD2, PD3, PD4, PD5};
+    
     // Setting output pin to show when plane is level (digital pin 8)
     DDRB |= _BV(DDB0);
 
-    
-
     while(1)
     {
-        if (!checkState(TILT1) && !checkState(TILT2) && !checkState(TILT3) && !checkState(TILT4))
+        
+        if (checkLevelXY(numTiltSwitches, tiltSwitches))
         {
             // Turning output pin on
             PORTB |= _BV(PORTB0);

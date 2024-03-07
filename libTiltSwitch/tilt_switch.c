@@ -97,3 +97,26 @@ void waitForStateChange(int tiltSwitchPin)
         newState = checkState(tiltSwitchPin);
     }
 }
+
+/**
+ * Applicable for XY plane level, checks if all of the tilt switches
+ * are in their ON state meaning the XY plane is level.
+ * @param numTiltSwitches how many tilt switches are connected to the system.
+ * @param tiltSwitches integer array of tilt switch pins.
+ * @return An int being 1 or 0 representing a HIGH or LOW signal; HIGH (1)
+ *      means the tilt switch is in its ON state, and LOW (0) means its in
+ *      its OFF state.
+*/
+int checkLevelXY(int numTiltSwitches, int tiltSwitches[])
+{
+    int level = 1;
+    for (int i = 0; i < numTiltSwitches; i++)
+    {
+        if (checkState(tiltSwitches[i]))
+        {
+            level = 0;
+            return level;
+        }
+    }
+    return level;
+}
