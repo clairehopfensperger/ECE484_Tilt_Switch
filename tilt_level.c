@@ -18,24 +18,18 @@
 // #define TILT3 PD4
 // #define TILT4 PD5
 
-//# define numTiltSwitches 4
-
 int main(void)
 {
-    // // Put tilt switch pins in an array.
-    // const int numTiltSwitches = 4;
-    // const int tiltSwitches[numTiltSwitches] = {PD2, PD3, PD4, PD5};
-    
     // Put tilt switch pins in an array.
     const int numTiltSwitches = 4;
     int tiltSwitches[numTiltSwitches];
-    tiltSwitches[0] = PD2;
-    tiltSwitches[1] = PD3;
-    tiltSwitches[2] = PD4;
-    tiltSwitches[3] = PD5;
+    tiltSwitches[0] = PD3;
+    tiltSwitches[1] = PD2;
+    tiltSwitches[2] = PD1;
+    tiltSwitches[3] = PD0;
 
+    // Set tilt switch pins as input
     for (int i = 0; i < numTiltSwitches; i++) {
-        // Set tilt switch pins as input
 	    DDRD &= ~(1 << tiltSwitches[i]);
     }
     

@@ -21,9 +21,9 @@ def run_command(command):
 print ("Number of arguments: %d" %  len(sys.argv))
 print ("Argument List: %s" % str(sys.argv))
 
-files_to_compile = ['tilt_level', 'libTiltSwitch/tilt_switch']
-directories = ['libTiltSwitch']
-file_to_compile = 'tilt_level'
+files_to_compile = ['tilt_control', 'libTiltSwitch/tilt_switch', 'libLCD/hd44780']  #'tilt_level', 'libLCD_I2C/liquid_crystal_i2c', 'libLCD_I2C/libI2C/i2c_master']
+directories = ['libTiltSwitch', 'libLCD']  #'libLCD_I2C', 'libLCD_I2C/libI2C']
+file_to_compile = 'tilt_control'  #'tilt_level'
 if len(sys.argv) == 2:
     com_port = 'com4'
 else:
