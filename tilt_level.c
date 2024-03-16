@@ -18,11 +18,26 @@
 // #define TILT3 PD4
 // #define TILT4 PD5
 
+//# define numTiltSwitches 4
+
 int main(void)
 {
-    // Putt tilt switch pins in an array.
+    // // Put tilt switch pins in an array.
+    // const int numTiltSwitches = 4;
+    // const int tiltSwitches[numTiltSwitches] = {PD2, PD3, PD4, PD5};
+    
+    // Put tilt switch pins in an array.
     const int numTiltSwitches = 4;
-    const int tiltSwitches[numTiltSwitches] = {PD2, PD3, PD4, PD5};
+    int tiltSwitches[numTiltSwitches];
+    tiltSwitches[0] = PD2;
+    tiltSwitches[1] = PD3;
+    tiltSwitches[2] = PD4;
+    tiltSwitches[3] = PD5;
+
+    for (int i = 0; i < numTiltSwitches; i++) {
+        // Set tilt switch pins as input
+	    DDRD &= ~(1 << tiltSwitches[i]);
+    }
     
     // Setting output pin to show when plane is level (digital pin 8)
     DDRB |= _BV(DDB0);
@@ -30,11 +45,12 @@ int main(void)
     while(1)
     {
         
-        if (checkLevelXY(numTiltSwitches, tiltSwitches))
+        if (checkAllOn(numTiltSwitches, tiltSwitches))
         {
             // Turning output pin on
             PORTB |= _BV(PORTB0);
-        } else
+        }
+        else
         {
             // Turning output pin off
             PORTB &= ~_BV(PORTB0);

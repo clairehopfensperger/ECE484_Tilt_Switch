@@ -1,7 +1,8 @@
 /*
     Copyright Claire Hopfensperger 2024
 
-    Library for tilt switch helper functions
+    Library for tilt switch helper functions.
+    Assumes tilt switch is in Arduino port D.
 */
 
 
@@ -16,21 +17,22 @@
  * Checks what state the tilt switch connected to tiltSwitchPin is in.
  * @param tiltSwitchPin which pin the tilt switch is connected to.
  * @return An int being 1 or 0 representing a HIGH or LOW signal; HIGH (1)
- *      means the tilt switch is in its ON state, and LOW (0) means its in
- *      its OFF state.
+ *      means the tilt switch is in its OFF state, and LOW (0) means its in
+ *      its ON state.
 */
 int checkState(int tiltSwitchPin)
 {
-    return (PIND & (1 << tiltSwitchPin));
+    return (PIND & (1 << tiltSwitchPin));  // tilt switch must be in port D
 }
 
 /**
+ * NOT TESTED YET
  * Checks what state the tilt switch connected to tiltSwitchPin is in in a
  *      debounched manner.
  * @param tiltSwitchPin which pin the tilt switch is connected to.
  * @return An int being 1 or 0 representing a HIGH or LOW signal; HIGH (1)
- *      means the tilt switch is in its ON state, and LOW (0) means its in
- *      its OFF state.
+ *      means the tilt switch is in its OFF state, and LOW (0) means its in
+ *      its ON state.
 */
 int debouncedCheckState(int tiltSwitchPin)
 {
@@ -39,7 +41,7 @@ int debouncedCheckState(int tiltSwitchPin)
 	if (checkState(tiltSwitchPin) == 1)
 	{
 		/* software debounce */
-		_delay_ms(15);
+		_delay_ms(50);
 		
         if (checkState(tiltSwitchPin) == 0)
 		{
@@ -99,24 +101,22 @@ void waitForStateChange(int tiltSwitchPin)
 }
 
 /**
- * Applicable for XY plane level, checks if all of the tilt switches
- * are in their ON state meaning the XY plane is level.
+ * Checks if all of the tilt switches are in their ON state.
  * @param numTiltSwitches how many tilt switches are connected to the system.
  * @param tiltSwitches integer array of tilt switch pins.
- * @return An int being 1 or 0 representing a HIGH or LOW signal; HIGH (1)
- *      means the tilt switch is in its ON state, and LOW (0) means its in
- *      its OFF state.
+ * @return An int being 1 or 0, 1 (true) meaning all tilt switches are in ON state,
+ *      0 (false) meaning not all tilt switches are in ON state.
 */
-int checkLevelXY(int numTiltSwitches, int tiltSwitches[])
+int checkAllOn(int numTiltSwitches, int tiltSwitches[])
 {
-    int level = 1;
+    int on = 1;
     for (int i = 0; i < numTiltSwitches; i++)
     {
         if (checkState(tiltSwitches[i]))
         {
-            level = 0;
-            return level;
+            on = 0;
+            return on;
         }
     }
-    return level;
+    return on;
 }

@@ -18,4 +18,4 @@ int debouncedCheckState(int tiltSwitchPin);
 void waitForTiltON(int tiltSwitchPin);
 void waitForTiltOFF(int tiltSwitchPin);
 void waitForStateChange(int tiltSwitchPin);
-int checkLevelXY(int numTiltSwitches, int tiltSwitches[]);
+int checkAllOn(int numTiltSwitches, int tiltSwitches[]);
