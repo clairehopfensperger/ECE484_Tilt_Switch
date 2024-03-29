@@ -21,15 +21,15 @@ def run_command(command):
 print ("Number of arguments: %d" %  len(sys.argv))
 print ("Argument List: %s" % str(sys.argv))
 
-# # tilt level
-# files_to_compile = ['tilt_level', 'libTiltSwitch/tilt_switch'] 
-# directories = ['libTiltSwitch']
-# file_to_compile = 'tilt_level'
-
-# tilt_control
-files_to_compile = ['tilt_control', 'libTiltSwitch/tilt_switch', 'libLCD/HD44780'] 
+# tilt level
+files_to_compile = ['tilt_level', 'libTiltSwitch/tilt_switch', 'libLCD/HD44780'] 
 directories = ['libTiltSwitch', 'libLCD']
-file_to_compile = 'tilt_control'
+file_to_compile = 'tilt_level'
+
+# # tilt_control
+# files_to_compile = ['tilt_control', 'libTiltSwitch/tilt_switch', 'libLCD/HD44780'] 
+# directories = ['libTiltSwitch', 'libLCD']
+# file_to_compile = 'tilt_control'
 
 if len(sys.argv) == 2:
     com_port = 'com4'
