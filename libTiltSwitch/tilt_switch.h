@@ -13,9 +13,19 @@
 #include "IO_Macros.h"
 
 // Prototypes
-int checkState(int tiltSwitchPin);
-int debouncedCheckState(int tiltSwitchPin);
-void waitForTiltON(int tiltSwitchPin);
-void waitForTiltOFF(int tiltSwitchPin);
-void waitForStateChange(int tiltSwitchPin);
-int checkAllOn(int numTiltSwitches, int tiltSwitches[]);
+void setupTiltSwitchesB(int numTiltSwitches, int tiltSwitches[]);
+void setupTiltSwitchesD(int numTiltSwitches, int tiltSwitches[]);
+
+int checkStateB(int tiltSwitchPin);
+int checkStateD(int tiltSwitchPin);
+
+// int debouncedCheckState(int tiltSwitchPin);
+
+// void waitForTiltON(int tiltSwitchPin);
+
+// void waitForTiltOFF(int tiltSwitchPin);
+
+// void waitForStateChange(int tiltSwitchPin);
+
+int checkAllOn(int numTiltSwitchesB, int tiltSwitchesB[], int numTiltSwitchesD,
+        int tiltSwitchesD[]);
