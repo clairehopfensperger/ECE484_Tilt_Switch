@@ -14,11 +14,6 @@
 #include "libTiltSwitch/tilt_switch.h"
 #include "libLCD/hd44780.h"
 
-// #define TILT_UP PD3
-// #define TILT_LEFT PD2
-// #define TILT_RIGHT PB1
-// #define TILT_DOWN PB0
-
 int main(void)
 {
     // Put tilt switch pins in arrays and set them as inputs.
