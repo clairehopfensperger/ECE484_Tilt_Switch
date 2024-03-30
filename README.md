@@ -32,7 +32,7 @@ A tilt switch is a type of switch that opens and closes based on its angle of ti
   <img src = "https://github.com/clairehopfensperger/ECE484_Tilt_Switch/blob/main/media/tilt_swich_setup.png" width = 600>
 </p>
 <br>
-By using digitalRead() with the pin connected to the tilt switch, you will get either a HIGH or LOW (1 or 0) signal. The LOW signal correlates to when the switch is in its "ON state" and has a closed connection, and the HIGH signal correlates to when the switch is in its "OFF state" and has an opened connection. The HIGH signal correlates to the "OFF state" and the LOW signal correlates to the "ON state" due to the Arduino's active low digital inputs through pull-up resistors.
+In the Arduino IDE, by using digitalRead() with the pin connected to the tilt switch, you will get either a HIGH or LOW (1 or 0) signal. The LOW signal correlates to when the switch is in its "ON state" and has a closed connection, and the HIGH signal correlates to when the switch is in its "OFF state" and has an opened connection. The HIGH signal correlates to the "OFF state" and the LOW signal correlates to the "ON state" due to the Arduino's active low digital inputs through pull-up resistors.
 <br><br>
 
 ## Iterfacing Project
