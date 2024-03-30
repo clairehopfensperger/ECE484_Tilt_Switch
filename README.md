@@ -36,4 +36,4 @@ In the Arduino IDE, by using digitalRead() with the pin connected to the tilt sw
 <br><br>
 
 ## Iterfacing Project
-Check out the [wiki](https://github.com/clairehopfensperger/ECE484_Tilt_Switch/wiki) for a project report!
+Check out the [wiki](https://github.com/clairehopfensperger/ECE484_Tilt_Switch/wiki) for information on the project!
