@@ -1,8 +1,8 @@
 /*
-    Copyright Claire Hopfensperger 2024
+    Author: Claire Hopfensperger
+    Year: 2024
 
-    Making a tilt switch controller that moves characters on an LCD.
-    !! DOES NOT WORK RIGHT NOW !!
+    Tilt switch controller that moves a character on an LCD.
 */
 
 #ifndef __AVR_ATmega328P__

@@ -1,7 +1,8 @@
 /*
-    Copyright Claire Hopfensperger 2024
+    Author: Claire Hopfensperger
+    Year: 2024
 
-    Making a XY plane level with tilt switches.
+    Tilt switch XY plane level.
 */
 
 #ifndef __AVR_ATmega328P__
