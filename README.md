@@ -35,10 +35,10 @@ A tilt switch is a type of switch that opens and closes based on its angle of ti
 In the Arduino IDE, by using digitalRead() with the pin connected to the tilt switch, you will get either a HIGH or LOW (1 or 0) signal. The LOW signal correlates to when the switch is in its "ON state" and has a closed connection, and the HIGH signal correlates to when the switch is in its "OFF state" and has an opened connection. The HIGH signal correlates to the "OFF state" and the LOW signal correlates to the "ON state" due to the Arduino's active low digital inputs through pull-up resistors.
 <br><br>
 
-## Using the Tilt Switch Library
-In order to use the tilt switch library, make sure you have `#include "libTiltSwitch/tilt_switch.h"` at the top of your program.
+## Using the Tilt Switch C Library
+In order to use the tilt switch C library I created, download the **libTiltSwitch** folder, place it in the directory where you are working, and make sure you have `#include "libTiltSwitch/tilt_switch.h"` at the top of your program.
 <br><br>
-You will also need to configure which pins you are using your tilt switches with. For example, in the code snippet below, I am adding Arduino digital pins 8 and 9 (PB0 and PB1) to my tiltSwitchesB array for future use. If you are using multiple pins from different Arduino ports, put the pins in separate arrays based on which port they are in.
+You will also need to configure which pins you are using your tilt switches with in your program. For example, in the code snippet below, I am adding Arduino digital pins 8 and 9 (PB0 and PB1) to my `tiltSwitchesB` array for future use. If you are using multiple pins from different Arduino ports, put the pins in separate arrays based on which port they are in.
 ```c
 // B port tilt switch pins.
 const int numTiltSwitchesB = 2;
