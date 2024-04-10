@@ -38,7 +38,7 @@ In the Arduino IDE, by using digitalRead() with the pin connected to the tilt sw
 ## Using the Tilt Switch Library
 In order to use the tilt switch library, make sure you have `#include "libTiltSwitch/tilt_switch.h"` at the top of your program.
 <br><br>
-You will also need to configure which pins you are using your tilt switches with. For example, in the code snippet below, I am adding Arduino digital pins 8 and 9 (PB0 and PB1) to my tiltSwitchesB array for future use.
+You will also need to configure which pins you are using your tilt switches with. For example, in the code snippet below, I am adding Arduino digital pins 8 and 9 (PB0 and PB1) to my tiltSwitchesB array for future use. If you are using multiple pins from different Arduino ports, put the pins in separate arrays based on which port they are in.
 ```c
 // B port tilt switch pins.
 const int numTiltSwitchesB = 2;
@@ -51,7 +51,7 @@ Check out **tilt_level.c**, **tilt_control.c**, and **tilt_test.c** to see more 
 <br><br>
 
 ## Running Programs on the Arduino UNO R3
-When compiling and uploading programs to the Arduino, adjust the **compile_script.py** to match your system directories and files. First, change the `path_win_avr` variable to match the path of where their avr package is located. Then, adjust the `files_to_compile`, `directories`, and `file_to_compile` variables to match what files you are compiling and uploading to the Arduino. 
+All of the C code is compilable with avr-gcc. When compiling and uploading programs to the Arduino, adjust the **compile_script.py** to match your system directories and files. First, change the `path_win_avr` variable to match the path of where your avr package is located. Then, adjust the `files_to_compile`, `directories`, and `file_to_compile` variables to match what files you are compiling and uploading to the Arduino. 
 <br> 
 
 For example, as seen below, my main file I am compiling is 'tilt_test' as included in `files_to_compile` and `file_to_compile`, and the other files I must compile with it are 'libTiltSwitch/tilt_switch' (the tilt switch library files) and 'libLCD/HD44780' (the LCD library files) as included in `files_to_compile`. I also included what directories those files are within in the `directories` variable.
