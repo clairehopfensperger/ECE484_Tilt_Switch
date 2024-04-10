@@ -47,7 +47,7 @@ tiltSwitchesB[0] = PB0;
 tiltSwitchesB[1] = PB1;
 setupTiltSwitchesB(numTiltSwitchesB, tiltSwitchesB);
 ```
-Check out **tilt_level.c**, **tilt_control.c**, and **tilt_test.c** to see more examples of how to use the tilt library.
+Check out **tilt_level.c**, **tilt_control.c**, and **tilt_test.c** to see more examples of how to use the tilt switch library.
 <br><br>
 
 ## Running Programs on the Arduino UNO R3
